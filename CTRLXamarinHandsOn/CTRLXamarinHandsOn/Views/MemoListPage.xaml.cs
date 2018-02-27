@@ -7,9 +7,9 @@ using Xamarin.Forms;
 
 namespace CTRLXamarinHandsOn.Views
 {
-	public partial class MainPage : ContentPage
+	public partial class MemoListPage : ContentPage
 	{
-		public MainPage ()
+		public MemoListPage ()
 		{
 			InitializeComponent ();
 		}

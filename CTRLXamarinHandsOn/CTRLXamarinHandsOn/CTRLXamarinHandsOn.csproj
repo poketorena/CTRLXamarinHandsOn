@@ -12,4 +12,10 @@
     <PackageReference Include="Prism.Unity.Forms" Version="7.0.0.362" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Update="Views\MemoListPage.xaml.cs">
+      <DependentUpon>MemoListPage.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
 </Project>

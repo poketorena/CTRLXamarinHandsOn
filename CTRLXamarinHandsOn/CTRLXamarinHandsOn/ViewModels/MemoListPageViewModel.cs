@@ -8,12 +8,12 @@ using System.Text;
 
 namespace CTRLXamarinHandsOn.ViewModels
 {
-    public class MainPageViewModel : ViewModelBase
+    public class MemoListPageViewModel : ViewModelBase
     {
-        public MainPageViewModel(INavigationService navigationService) 
+        public MemoListPageViewModel(INavigationService navigationService) 
             : base (navigationService)
         {
-            Title = "Main Page";
+            Title = "Memo List Page";
         }
     }
 }
