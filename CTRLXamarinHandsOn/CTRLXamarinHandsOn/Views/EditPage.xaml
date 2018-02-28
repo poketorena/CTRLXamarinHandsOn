@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="CTRLXamarinHandsOn.Views.EditPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+    Title="Edit Page"
+    prism:ViewModelLocator.AutowireViewModel="True">
+
+    <StackLayout>
+        <Label Text="Title" />
+        <Entry Text="{Binding Memo.Title}" />
+        <Label Text="Memo" />
+        <Editor Text="{Binding Memo.Text}" VerticalOptions="FillAndExpand" />
+        <StackLayout
+            HorizontalOptions="Center"
+            Orientation="Horizontal"
+            VerticalOptions="Center">
+
+            <Button
+                BackgroundColor="#F44336"
+                Command="{Binding DeleteCommand}"
+                HeightRequest="60"
+                HorizontalOptions="CenterAndExpand"
+                IsVisible="{Binding IsUpdateMode}"
+                MinimumWidthRequest="165"
+                Text="Delete"
+                TextColor="White"
+                VerticalOptions="Center"
+                WidthRequest="330" />
+            <Button
+                BackgroundColor="#2196F3"
+                Command="{Binding UpdateCommand}"
+                HeightRequest="60"
+                HorizontalOptions="CenterAndExpand"
+                IsVisible="{Binding IsUpdateMode}"
+                MinimumWidthRequest="165"
+                Text="Update"
+                TextColor="White"
+                VerticalOptions="Center"
+                WidthRequest="330" />
+            <Button
+                BackgroundColor="#2196F3"
+                Command="{Binding SaveCommand}"
+                HeightRequest="60"
+                HorizontalOptions="CenterAndExpand"
+                IsVisible="{Binding IsAddMode}"
+                MinimumWidthRequest="165"
+                Text="Save"
+                TextColor="White"
+                VerticalOptions="Center"
+                WidthRequest="330" />
+        </StackLayout>
+    </StackLayout>
+
+</ContentPage>

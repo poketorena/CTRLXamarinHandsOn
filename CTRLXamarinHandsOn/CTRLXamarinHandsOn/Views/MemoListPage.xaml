@@ -3,10 +3,32 @@
     x:Class="CTRLXamarinHandsOn.Views.MemoListPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    Title="{Binding Title}">
+    xmlns:b="clr-namespace:Prism.Behaviors;assembly=Prism.Forms"
+    Title="Memo List Page">
 
-    <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
-        <Label Text="Welcome to Xamarin Forms and Prism!" />
+    <StackLayout Orientation="Vertical">
+        <ListView x:Name="ListViewMazaiNotes" ItemsSource="{Binding Memos.Value}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ImageCell Detail="{Binding Text}" Text="{Binding Title}" />
+                </DataTemplate>
+            </ListView.ItemTemplate>
+            <ListView.Behaviors>
+                <b:EventToCommandBehavior
+                    Command="{Binding ItemSelectedCommand}"
+                    EventArgsParameterPath="Item"
+                    EventName="ItemTapped" />
+            </ListView.Behaviors>
+        </ListView>
+        <Button
+            BackgroundColor="#2196F3"
+            Command="{Binding NavigateEditPageCommand}"
+            HeightRequest="60"
+            HorizontalOptions="Center"
+            Text="Add"
+            TextColor="White"
+            VerticalOptions="Center"
+            WidthRequest="330" />
     </StackLayout>
 
 </ContentPage>
