@@ -1,14 +1,10 @@
 ﻿using CTRLXamarinHandsOn.Models;
-using CTRLXamarinHandsOn.Views;
 using Prism.Commands;
 using Prism.Navigation;
-using Reactive.Bindings;
-using Reactive.Bindings.Extensions;
-using System.Collections.ObjectModel;
 
 namespace CTRLXamarinHandsOn.ViewModels
 {
-    public class MemoListPageViewModel
+    public class EditPageViewModel
     {
         // ここにプロパティを追加
 
@@ -22,6 +18,9 @@ namespace CTRLXamarinHandsOn.ViewModels
         // ここにコンストラクタを追加
 
 
-        // ここにプライベート関数を追加
+        // パブリック関数
+
+
+        // プライベート関数
     }
 }

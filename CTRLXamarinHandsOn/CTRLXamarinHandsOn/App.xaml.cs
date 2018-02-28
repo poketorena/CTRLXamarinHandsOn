@@ -1,10 +1,10 @@
-﻿using Prism;
-using Prism.Ioc;
-using CTRLXamarinHandsOn.ViewModels;
+﻿using CTRLXamarinHandsOn.Models;
 using CTRLXamarinHandsOn.Views;
+using Prism;
+using Prism.Ioc;
+using Prism.Unity;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using Prism.Unity;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace CTRLXamarinHandsOn
@@ -31,6 +31,8 @@ namespace CTRLXamarinHandsOn
         {
             containerRegistry.RegisterForNavigation<NavigationPage>();
             containerRegistry.RegisterForNavigation<MemoListPage>();
+            containerRegistry.RegisterForNavigation<EditPage>();
+            containerRegistry.RegisterSingleton<MemoHolder>();
         }
     }
 }
