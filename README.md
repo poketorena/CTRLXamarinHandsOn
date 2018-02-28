@@ -1,7 +1,7 @@
 # CTRLXamarinHandsOn
 
 Xamarin講習のデータです。
-Xamarinを使ってAndroid、iOS、Windowsで使えるメモ帳を作ります。
+Xamarin.Formsを使ってAndroid、iOS、Windowsで使えるメモ帳を作ります。
 
 ## Build Status
 
