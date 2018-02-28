@@ -11,7 +11,7 @@ Xamarinを使ってAndroid、iOS、Windowsで使えるメモ帳を作ります�
 | iOS | [![Build status](https://build.appcenter.ms/v0.1/apps/f3ce942e-dcfa-412a-b8e6-8e82e63aadaf/branches/master/badge)](https://appcenter.ms) |
 | UWP | [![Build status](https://build.appcenter.ms/v0.1/apps/96388c84-c371-4fcc-8789-9b71f75d4b02/branches/master/badge)](https://appcenter.ms) |
 
-## Development environment
+## Development Environment
 * Windows 10 Home
 * Visual Studio 2017 Enterprise
 
