@@ -32,7 +32,7 @@ namespace CTRLXamarinHandsOn.Models
         public async Task LoadAsync()
         {
             var rootFolder = FileSystem.Current.LocalStorage;
-            var file = await rootFolder.CreateFileAsync("MazaiNotes.json", CreationCollisionOption.OpenIfExists);
+            var file = await rootFolder.CreateFileAsync("Memos.json", CreationCollisionOption.OpenIfExists);
             var jsonString = await file.ReadAllTextAsync();
 
             Memos = JsonConvert.DeserializeObject<ObservableCollection<Memo>>(jsonString) ?? new ObservableCollection<Memo>();
@@ -71,7 +71,7 @@ namespace CTRLXamarinHandsOn.Models
             var jsonString = JsonConvert.SerializeObject(Memos);
 
             var rootFolder = FileSystem.Current.LocalStorage;
-            var file = await rootFolder.CreateFileAsync("MazaiNotes.json", CreationCollisionOption.ReplaceExisting);
+            var file = await rootFolder.CreateFileAsync("Memos.json", CreationCollisionOption.ReplaceExisting);
             await file.WriteAllTextAsync(jsonString);
         }
     }
