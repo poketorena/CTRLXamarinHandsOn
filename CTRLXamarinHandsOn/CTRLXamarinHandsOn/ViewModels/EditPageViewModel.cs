@@ -41,10 +41,10 @@ namespace CTRLXamarinHandsOn.ViewModels
         public DelegateCommand DeleteCommand { get; }
 
         // プライベート変数
-        private readonly MemoHolder _memoHolder;
+        private readonly IMemoHolder _memoHolder;
 
         // コンストラクタ
-        public EditPageViewModel(INavigationService navigationService, MemoHolder memoHolder)
+        public EditPageViewModel(INavigationService navigationService, IMemoHolder memoHolder)
             : base(navigationService)
         {
             _memoHolder = memoHolder;

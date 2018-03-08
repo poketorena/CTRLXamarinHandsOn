@@ -18,10 +18,10 @@ namespace CTRLXamarinHandsOn.ViewModels
         public DelegateCommand<Memo> ItemSelectedCommand { get; }
 
         // プライベート変数
-        private readonly MemoHolder _memoHolder;
+        private readonly IMemoHolder _memoHolder;
 
         // コンストラクタ
-        public MemoListPageViewModel(INavigationService navigationService, MemoHolder memoHolder)
+        public MemoListPageViewModel(INavigationService navigationService, IMemoHolder memoHolder)
             : base(navigationService)
         {
             _memoHolder = memoHolder;

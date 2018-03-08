@@ -32,7 +32,7 @@ namespace CTRLXamarinHandsOn
             containerRegistry.RegisterForNavigation<NavigationPage>();
             containerRegistry.RegisterForNavigation<MemoListPage>();
             containerRegistry.RegisterForNavigation<EditPage>();
-            containerRegistry.RegisterSingleton<MemoHolder>();
+            containerRegistry.RegisterSingleton<IMemoHolder, MemoHolder>();
         }
     }
 }

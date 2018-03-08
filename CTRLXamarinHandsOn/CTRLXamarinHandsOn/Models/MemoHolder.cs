@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CTRLXamarinHandsOn.Models
 {
-    public class MemoHolder : BindableBase
+    public class MemoHolder : BindableBase, IMemoHolder
     {
         // プロパティ
         private ObservableCollection<Memo> _memos;
