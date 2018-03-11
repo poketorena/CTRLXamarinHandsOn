@@ -10,7 +10,7 @@
         <ListView x:Name="ListViewMazaiNotes" ItemsSource="{Binding Memos.Value}">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <ImageCell Detail="{Binding Text}" Text="{Binding Title}" />
+                    <TextCell Detail="{Binding Text}" Text="{Binding Title}" />
                 </DataTemplate>
             </ListView.ItemTemplate>
             <ListView.Behaviors>
