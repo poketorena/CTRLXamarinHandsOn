@@ -6,7 +6,12 @@ namespace CTRLXamarinHandsOn.Models
     public class Memo : BindableBase
     {
         // プロパティ
-        public string Id { get; set; }
+        private string _id;
+        public string Id
+        {
+            get { return _id; }
+            set { SetProperty(ref _id, value); }
+        }
 
         private string _title;
         public string Title
