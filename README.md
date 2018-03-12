@@ -5,11 +5,21 @@ Xamarin.Formsを使ってAndroid、iOS、Windowsで使えるメモ帳を作り�
 
 ## Build Status
 
+### master
+
 |          | Status |
 | -------- | ------ |
-| Android | [![Build status](https://build.appcenter.ms/v0.1/apps/5ef2b0e8-6c25-4070-9821-277433775423/branches/master/badge)](https://appcenter.ms)|
+| Android | [![Build status](https://build.appcenter.ms/v0.1/apps/5ef2b0e8-6c25-4070-9821-277433775423/branches/master/badge)](https://appcenter.ms) |
 | iOS | [![Build status](https://build.appcenter.ms/v0.1/apps/f3ce942e-dcfa-412a-b8e6-8e82e63aadaf/branches/master/badge)](https://appcenter.ms) |
 | UWP | [![Build status](https://build.appcenter.ms/v0.1/apps/96388c84-c371-4fcc-8789-9b71f75d4b02/branches/master/badge)](https://appcenter.ms) |
+
+### complete_version
+
+|          | Status |
+| -------- | ------ |
+| Android | [![Build status](https://build.appcenter.ms/v0.1/apps/5ef2b0e8-6c25-4070-9821-277433775423/branches/complete_version/badge)](https://appcenter.ms) |
+| iOS | [![Build status](https://build.appcenter.ms/v0.1/apps/f3ce942e-dcfa-412a-b8e6-8e82e63aadaf/branches/complete_version/badge)](https://appcenter.ms) |
+| UWP | [![Build status](https://build.appcenter.ms/v0.1/apps/96388c84-c371-4fcc-8789-9b71f75d4b02/branches/complete_version/badge)](https://appcenter.ms) |
 
 ## Development Environment
 * Windows 10 Home
