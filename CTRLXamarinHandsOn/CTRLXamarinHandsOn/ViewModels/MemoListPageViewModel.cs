@@ -14,8 +14,13 @@ namespace CTRLXamarinHandsOn.ViewModels
         public ReactiveProperty<ObservableCollection<Memo>> Memos { get; }
 
         // デリゲートコマンド
-        public DelegateCommand NavigateEditPageCommand { get; }
-        public DelegateCommand<Memo> ItemSelectedCommand { get; }
+        private DelegateCommand _navigateEditCommand;
+        public DelegateCommand NavigateEditCommand =>
+            _navigateEditCommand ?? (_navigateEditCommand = new DelegateCommand(async () => await NavigationService.NavigateAsync(nameof(EditPage))));
+
+        private DelegateCommand<Memo> _itemSelectedCommand;
+        public DelegateCommand<Memo> ItemSelectedCommand =>
+            _itemSelectedCommand ?? (_itemSelectedCommand = new DelegateCommand<Memo>(ExecuteItemSelectedCommand));
 
         // プライベート変数
         private readonly IMemoHolder _memoHolder;
@@ -26,18 +31,16 @@ namespace CTRLXamarinHandsOn.ViewModels
         {
             _memoHolder = memoHolder;
             Memos = _memoHolder.ToReactivePropertyAsSynchronized(x => x.Memos);
-            NavigateEditPageCommand = new DelegateCommand(() => NavigationService.NavigateAsync(nameof(EditPage)));
-            ItemSelectedCommand = new DelegateCommand<Memo>(ExecuteItemSelected);
         }
 
         // プライベート関数
-        private void ExecuteItemSelected(Memo memo)
+        private async void ExecuteItemSelectedCommand(Memo memo)
         {
             var parameters = new NavigationParameters
             {
                 { "memo", memo }
             };
-            NavigationService.NavigateAsync(nameof(EditPage), parameters);
+            await NavigationService.NavigateAsync(nameof(EditPage), parameters);
         }
     }
 }
