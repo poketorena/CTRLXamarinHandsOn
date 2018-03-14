@@ -14,9 +14,9 @@ namespace CTRLXamarinHandsOn.ViewModels
         public ReactiveProperty<ObservableCollection<Memo>> Memos { get; }
 
         // デリゲートコマンド
-        private DelegateCommand _navigateEditCommand;
-        public DelegateCommand NavigateEditCommand =>
-            _navigateEditCommand ?? (_navigateEditCommand = new DelegateCommand(async () => await NavigationService.NavigateAsync(nameof(EditPage))));
+        private DelegateCommand _navigateEditPageCommand;
+        public DelegateCommand NavigateEditPageCommand =>
+            _navigateEditPageCommand ?? (_navigateEditPageCommand = new DelegateCommand(async () => await NavigationService.NavigateAsync(nameof(EditPage))));
 
         private DelegateCommand<Memo> _itemSelectedCommand;
         public DelegateCommand<Memo> ItemSelectedCommand =>
