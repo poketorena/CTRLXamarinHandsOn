@@ -36,9 +36,17 @@ namespace CTRLXamarinHandsOn.ViewModels
         }
 
         // デリゲートコマンド
-        public DelegateCommand SaveCommand { get; }
-        public DelegateCommand UpdateCommand { get; }
-        public DelegateCommand DeleteCommand { get; }
+        private DelegateCommand _saveCommand;
+        public DelegateCommand SaveCommand =>
+            _saveCommand ?? (_saveCommand = new DelegateCommand(ExecuteSaveCommand));
+
+        private DelegateCommand _updateCommand;
+        public DelegateCommand UpdateCommand =>
+            _updateCommand ?? (_updateCommand = new DelegateCommand(ExecuteUpdateCommand));
+
+        private DelegateCommand _deleteCommand;
+        public DelegateCommand DeleteCommand =>
+            _deleteCommand ?? (_deleteCommand = new DelegateCommand(ExecuteDeleteCommand));
 
         // プライベート変数
         private readonly IMemoHolder _memoHolder;
@@ -48,9 +56,6 @@ namespace CTRLXamarinHandsOn.ViewModels
             : base(navigationService)
         {
             _memoHolder = memoHolder;
-            SaveCommand = new DelegateCommand(ExecuteSave);
-            UpdateCommand = new DelegateCommand(ExecuteUpdate);
-            DeleteCommand = new DelegateCommand(ExecuteDelete);
         }
 
         // パブリック関数
@@ -76,19 +81,19 @@ namespace CTRLXamarinHandsOn.ViewModels
         }
 
         // プライベート関数
-        private async void ExecuteSave()
+        private async void ExecuteSaveCommand()
         {
             await _memoHolder.AddAsync(Memo);
             await NavigationService.GoBackAsync();
         }
 
-        private async void ExecuteUpdate()
+        private async void ExecuteUpdateCommand()
         {
             await _memoHolder.Update(TempMemo.Id, Memo);
             await NavigationService.GoBackAsync();
         }
 
-        private async void ExecuteDelete()
+        private async void ExecuteDeleteCommand()
         {
             await _memoHolder.Delete(TempMemo.Id);
             await NavigationService.GoBackAsync();
