@@ -1,39 +1,20 @@
 ﻿using CTRLXamarinHandsOn.Models;
 using Prism.Commands;
 using Prism.Navigation;
+using Reactive.Bindings;
 
 namespace CTRLXamarinHandsOn.ViewModels
 {
     public class EditPageViewModel : ViewModelBase
     {
         // プロパティ
-        private bool _isAddMode;
-        public bool IsAddMode
-        {
-            get { return _isAddMode; }
-            set { SetProperty(ref _isAddMode, value); }
-        }
+        public ReactiveProperty<bool> IsAddMode { get; } = new ReactiveProperty<bool>();
 
-        private bool _isUpdateMode;
-        public bool IsUpdateMode
-        {
-            get { return _isUpdateMode; }
-            set { SetProperty(ref _isUpdateMode, value); }
-        }
+        public ReactiveProperty<bool> IsUpdateMode { get; } = new ReactiveProperty<bool>();
 
-        private Memo _memo = new Memo();
-        public Memo Memo
-        {
-            get { return _memo; }
-            set { SetProperty(ref _memo, value); }
-        }
+        public ReactiveProperty<Memo> Memo { get; } = new ReactiveProperty<Memo>();
 
-        private Memo _tempMemo = new Memo();
-        public Memo TempMemo
-        {
-            get { return _tempMemo; }
-            set { SetProperty(ref _tempMemo, value); }
-        }
+        public ReactiveProperty<Memo> TempMemo { get; } = new ReactiveProperty<Memo>();
 
         // デリゲートコマンド
         private DelegateCommand _saveCommand;
@@ -63,39 +44,39 @@ namespace CTRLXamarinHandsOn.ViewModels
         {
             if (parameters.TryGetValue<Memo>("memo", out var memo))
             {
-                Memo = new Memo
+                Memo.Value = new Memo
                 {
                     Title = memo.Title,
                     Text = memo.Text
                 };
-                TempMemo = memo;
-                IsUpdateMode = true;
-                IsAddMode = false;
+                TempMemo.Value = memo;
+                IsUpdateMode.Value = true;
+                IsAddMode.Value = false;
             }
             else
             {
-                Memo = new Memo();
-                IsUpdateMode = false;
-                IsAddMode = true;
+                Memo.Value = new Memo();
+                IsUpdateMode.Value = false;
+                IsAddMode.Value = true;
             }
         }
 
         // プライベート関数
         private async void ExecuteSaveCommand()
         {
-            await _memoHolder.AddAsync(Memo);
+            await _memoHolder.AddAsync(Memo.Value);
             await NavigationService.GoBackAsync();
         }
 
         private async void ExecuteUpdateCommand()
         {
-            await _memoHolder.Update(TempMemo.Id, Memo);
+            await _memoHolder.Update(TempMemo.Value.Id, Memo.Value);
             await NavigationService.GoBackAsync();
         }
 
         private async void ExecuteDeleteCommand()
         {
-            await _memoHolder.Delete(TempMemo.Id);
+            await _memoHolder.Delete(TempMemo.Value.Id);
             await NavigationService.GoBackAsync();
         }
     }
