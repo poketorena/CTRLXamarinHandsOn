@@ -11,7 +11,7 @@
         <Label Text="Title" />
         <Entry Text="{Binding Memo.Value.Title}" />
         <Label Text="Memo" />
-        <Editor Text="{Binding Memo.Vaule.Text}" VerticalOptions="FillAndExpand" />
+        <Editor Text="{Binding Memo.Value.Text}" VerticalOptions="FillAndExpand" />
         <StackLayout
             HorizontalOptions="Center"
             Orientation="Horizontal"
@@ -22,7 +22,7 @@
                 Command="{Binding DeleteCommand}"
                 HeightRequest="60"
                 HorizontalOptions="CenterAndExpand"
-                IsVisible="{Binding IsUpdateMode}"
+                IsVisible="{Binding IsUpdateMode.Value}"
                 MinimumWidthRequest="165"
                 Text="Delete"
                 TextColor="White"
