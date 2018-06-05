@@ -3,6 +3,9 @@
 Xamarin講習のデータです。
 Xamarin.Formsを使ってAndroid、iOS、Windowsで使えるメモ帳を作ります。
 
+<img src="Screenshot/Android_C%23.png" width=300>　<img src="Screenshot/iOS_C%23.png" width=300>
+<img src="Screenshot/UWP_C%23.png" width=600>
+
 ## Build Status
 
 ### master
