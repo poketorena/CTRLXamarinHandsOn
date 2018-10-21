@@ -1,6 +1,6 @@
 # CTRLXamarinHandsOn
 
-Xamarin講習のデータです。
+2018年3月13日に行ったコンピュータ技術研究会春合宿のXamarin講習のデータです。
 Xamarin.Formsを使ってAndroid、iOS、Windowsで使えるメモ帳を作ります。
 
 <img src="Screenshot/Android_C%23.png" width=300>　<img src="Screenshot/iOS_C%23.png" width=300>
